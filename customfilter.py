@@ -1,24 +1,39 @@
-#author: rajoan
+# Author: rajoan
 
-#Please change 'rockyou.txt' to your file name if your file name is different.(for most cases it is)
+def filter_passwords(input_file='rockyou.txt', output_file='filtered.txt'):
+    try:
+        number = int(input("Enter your password length: "))
+        character = input("Do you want exact (E), greater than or equal (G), or less than or equal (L)? ").strip().lower()
 
-number=int(input("Enter your password length:"))
-character=input("Do you want exact(E) or greater than or equal(G) or Less than or equal(L)?")
-           
-with open('rockyou.txt', 'r', encoding='utf-8', errors='ignore') as infile, open('filtered.txt','w',encoding='utf-8', errors='ignore') as outfile:
-    for line in infile:
-        password=line.strip()
-        if(character=='E' or character=='e'):
-            if len(password)==number:
-                outfile.write(password+'\n')
-        elif(character=='G' or character=='g'):
-            if len(password)>=number:
-                outfile.write(password+'\n')
-        elif(character=='L' or character=='l'):
-            if len(password)<=number:
-                outfile.write(password+'\n')
-        else:
+        valid_conditions = {
+            'e': lambda pwd: len(pwd) == number,
+            'g': lambda pwd: len(pwd) >= number,
+            'l': lambda pwd: len(pwd) <= number
+        }
+
+        if character not in valid_conditions:
             print("Wrong input, please run the program again.")
-            break
+            return
+
+        with open(input_file, 'r', encoding='utf-8', errors='ignore') as infile, \
+             open(output_file, 'w', encoding='utf-8', errors='ignore') as outfile:
+            count = 0
+            for line in infile:
+                password = line.strip()
+                if valid_conditions[character](password):
+                    outfile.write(password + '\n')
+                    count += 1
+
+            print(f"Filtered {count} passwords based on your criteria.")
+
+    except ValueError:
+        print("Invalid input for password length. Please enter a number.")
+    except FileNotFoundError:
+        print(f"Error: The file '{input_file}' was not found.")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+
+filter_passwords()
 
         
