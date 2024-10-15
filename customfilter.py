@@ -19,5 +19,6 @@ with open('rockyou.txt', 'r', encoding='utf-8', errors='ignore') as infile, open
                 outfile.write(password+'\n')
         else:
             print("Wrong input, please run the program again.")
+            break
 
         
