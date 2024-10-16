@@ -1,6 +1,8 @@
-# Author: rajoan
+#author: rajoan
 
-def filter_passwords(input_file='rockyou.txt', output_file='filtered.txt'):
+import sys
+
+def filter_passwords(input_file, output_file):
     try:
         number = int(input("Enter your password length: "))
         character = input("Do you want exact (E), greater than or equal (G), or less than or equal (L)? ").strip().lower()
@@ -33,7 +35,11 @@ def filter_passwords(input_file='rockyou.txt', output_file='filtered.txt'):
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
-
-filter_passwords()
-
+# Check for command-line arguments
+if len(sys.argv) < 3:
+    print("Usage: python customfilter.py <input_file> <output_file>")
+else:
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+    filter_passwords(input_file, output_file)
         
