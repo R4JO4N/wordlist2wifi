@@ -13,7 +13,7 @@ cd wordlist2wifi
 
 ls
 
-python3 customfilter.py <full path of input.txt> output.txt
+python3 customfilter.py <full_path_of_input.txt> output.txt
 
 example: (for Kali linux users)
 python3 customfilter.py /usr/share/wordlists/rockyou.txt output.txt
