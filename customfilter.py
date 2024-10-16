@@ -1,9 +1,10 @@
 #author: rajoan
 #Description:
 '''
-To avoid any path or permission errors move your input.txt file to wordlist2wifi directory and then run it.
+a simple python script to filter rockyou.txt or other famous wordlists or just a regular huge wordlist
 
 '''
+
 import sys
 print(f"<==========For wifi, give pass length 8 and then enter 'g'==========>\n\n")
 
