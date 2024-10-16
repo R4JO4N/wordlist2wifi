@@ -1,7 +1,7 @@
 #author: rajoan
 #Description:
 '''
-a simple python script to filter rockyou.txt or other famous wordlists or just a regular huge wordlist
+a simple python script to filter rockyou.txt or other famous wordlists or just a regular wordlist
 
 '''
 
