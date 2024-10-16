@@ -17,3 +17,5 @@ python3 customfilter.py <full_path_of_input.txt> output.txt
 
 example: (for Kali linux users)
 python3 customfilter.py /usr/share/wordlists/rockyou.txt output.txt
+
+PoC: https://www.youtube.com/watch?v=u1F65W9fZi8
