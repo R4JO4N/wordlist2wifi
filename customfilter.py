@@ -43,7 +43,7 @@ def filter_passwords(input_file, output_file):
 
 # Check for command-line arguments
 if len(sys.argv) < 3:
-    print("Usage: python customfilter.py <input_file> <output_file>")
+    print("Usage: python3 customfilter.py <input_file> <output_file>")
 else:
     input_file = sys.argv[1]
     output_file = sys.argv[2]
