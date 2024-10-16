@@ -15,7 +15,7 @@ python customfilter.py <path of your input text file> output.txt (for different 
 
 '''
 import sys
-print(f"<==========For wifi, give pass length 8 and then 'g'==========>")
+print(f"<==========For wifi, give pass length 8 and then enter 'g'==========>")
 
 def filter_passwords(input_file, output_file):
     try:
