@@ -11,7 +11,7 @@ Command:
 python customfilter.py input.txt output.txt  (for same directory)
 
 or
-python customfilter.py <path of your input text file> <path of your output text file> (for different directories)
+python customfilter.py <path of your input text file> output.txt (for different directories)
 
 '''
 import sys
